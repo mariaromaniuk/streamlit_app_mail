@@ -186,7 +186,6 @@ def call_ai(prompt: str) -> str:
         return f"AI error: {e}"
 
 def md_to_html(text: str) -> str:
-    """Конвертує базовий markdown у HTML для відображення в ai-box."""
     # bold **text**
     text = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', text)
     # italic *text*
@@ -208,7 +207,6 @@ def md_to_html(text: str) -> str:
     return text
 
 def render_ai_box(result: str | None, title: str) -> None:
-    """Рендерить ai-box або попередження якщо ключ не введено."""
     if result is None:
         st.warning("Enter your Google AI Studio API key in the sidebar to generate AI summaries.")
         return
